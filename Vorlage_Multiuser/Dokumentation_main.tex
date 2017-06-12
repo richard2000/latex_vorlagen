@@ -1,0 +1,70 @@
+\input{preinput.tex}
+% HIER: Autoren eintragen
+\author{Vorname1 Nachname1 Vorname2 Nachname2 Vorname3 Nachname3}
+\date{\today}
+\title{Dokumentation}
+
+\begin{document}
+\parindent 0pt
+\normalsize
+\input{title}
+\onehalfspacing
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead[]{\bfseries\headmark}
+
+% Überschrift vor Projekttitel
+\ohead[]{Projektdokumentation}
+% HIER: Fusszeile Namen anpassen
+\ifoot[]{V. Nachname1 - V. Nachname2 - V. Nachname3}
+\ofoot[]{\pagemark}
+\setheadsepline[\textwidth]{1pt}
+\setfootsepline[\textwidth]{1pt}
+\pagenumbering{arabic}
+
+
+
+% Einleitung einbinden
+\input{einleitung}
+
+% Projektumgebung einbinden
+\input{projektumgebung}
+
+% Allgemeine Zielsetzung des Projekts einbinden
+\input{zielsetzung}
+
+% Zielsetzung von zweitem Teilnehmer extra einbinden
+\input{name2/zielsetzung}
+
+% Realisierung von erstem Teilnehmer
+\input{name1/realisierung}
+
+% Realisierung von drittem Teilnehmer
+\input{name3/realisierung}
+
+% Realisierung von zweitem Teilnehmer
+\input{name2/realisierung}
+
+% Zusammenfassung einbinden
+\input{zusammenfassung}
+% Zusammenfassung von name2 extra einbinden
+\input{name2/zusammenfassung}
+
+% Ende des Haupttextes einbinden inkl. Unterschriften usw.
+\input{abschlusstext}
+
+% Abkürzungsverzeichnis einbinden
+\input{abkuerzungen.tex}
+
+% Abbildungsverzeichnis einbinden
+\listoffigures
+
+% Literaturverzeichnis einbinden
+\input{literatur.tex}
+
+% Anhang einbinden
+\input{anhang.tex}
+\end{document}

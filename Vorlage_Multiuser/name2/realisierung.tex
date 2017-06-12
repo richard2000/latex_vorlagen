@@ -1,0 +1,52 @@
+\newpage
+\subsection{Weitere Realisierung}
+\subsubsection{Mit Unterkapitel}
+Auch Tabellen lassen sich sehr gut darstellen hier ein Beispiel:\newline
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Farbtiefe & 640x480 & 800x600 & 1024x768 & 1280x1024\\
+\hline\hline
+8bit (256) & 769 & 771 & 773 & 775\\\hline
+15bit (32K) & 784 & 787 & 790 & 793\\\hline
+16bit (65K) & 785 & \textbf{788} & \textbf{791} & \textbf{794}\\\hline
+24bit (16M) & 786 & 789 & 792 & 795\\\hline
+\end{tabular}
+
+Etwas größer und aufwendiger:\newline
+\code{\textbackslash newline} nicht vergessen, sonst wird die Tabelle direkt hinter den Text gesetzt.\newline
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Parameter} & \textbf{Wert} & \textbf{Bedeutung}\\
+\hline\hline
+\textbf{\lbrack LINBO\rbrack} & & globale Konfiguration\\\hline
+\textbf{Cache} & /dev/sda3 & lokale Cache Partition\\\hline
+\textbf{Server} & 10.16.1.1 & IP des TFTP-Servers, der Images vorhält\\\hline
+\textbf{Group} & projekt &  Rechnergruppe\\\hline
+\textbf{RootTime} & 90 & automatischer Rootlogout nach 90 Sekunden\\\hline
+\textbf{AutoPartition} & yes & automatische Partitionsreparatur beim Linbo-Start\\\hline
+\textbf{AutoFormat} & no & kein automatisches Formatieren beim Linbo-Start\\\hline
+\textbf{DownloadType} & multicast & Image-Download per torrent\textbar multicast\textbar rsync\\\hline
+\textbf{BackgroundFontColor} & white & Bildschirmschriftfarbe (default: white)\\\hline
+\textbf{ConsoleFontColorStdout} & lightgreen & Konsolenschriftfarbe (default: white)\\\hline
+\end{tabular}
+\newline
+
+Aufzählungen mit Nummern und darin eingebettet ohne Nummerierung:
+
+\begin{enumerate}
+\item Punkt bla bla \lbrack eckige Klammern \rbrack 
+\item Unteraufzählung ohne Nummerierung
+\begin{itemize}
+\item Punkt bla bla
+\item Punkt bla bla
+\end{itemize}
+\item Punkt bla bla
+\item Punkt bla bla
+\item Punkt bla bla
+\end{enumerate}
+
+So kann man URLs einfügen.
+\url{http://bottlepy.org/docs/dev/tutorial.html} 11.01.2014 15:34 Uhr\newline
+\url{https://docs.python.org/2/library/} 11.01.2014 15:37 Uhr\newline
+\url{http://de.selfhtml.org/html/referenz/} 11.01.2014 15:46 Uhr
+

@@ -1,0 +1,52 @@
+\newpage
+\section{Realisierung}
+\subsection{Mal fremde ``Federn'' einfügen}
+So könnt man einen fremden Text zitieren:
+\begin{quote}
+``Hier steht der fremde Text der zitiert werden soll. bla bla bla ''
+\newline
+\url{https://de.wikipedia.org/wiki/Projekt} 20.05.2014 18:48 Uhr
+\end{quote}
+\subsubsection{Und noch ein Kapitel}
+\paragraph{Wir kommen mit den Ebenen nicht aus}$\;$\\
+bla bla bla 
+\paragraph{Relative Distinguished Name}$\;$\\
+Und hier noch ein Literaturverweis auf [Scheibner2011]
+bla bla bla 
+
+Wenn man Sourcecode schreibt soll dieser natürlich gut aussehen in der Dokumentation. Dies kann man z.B. so 
+darstellen wie hier:
+\begin{python}
+dn: dc=schule, ou=People,uid=ti2a
+objectClass: account
+uidNumber: 2000
+description: 2015
+\end{python}
+
+Die Darstellung hilft zur Strukturierung des Textes und gibt Übersicht.
+\begin{python}
+import ldap
+\end{python}
+
+\begin{python}
+return template('static/pwneusetzen.tpl', user = user, 
+			fehler = '', success = 'true',
+			liste = liste1)
+else:
+	return template('static/pwneusetzen.tpl', 
+	user = user, fehler = 'true', 
+	success = '', liste = liste1)
+\end{python}
+
+Manchmal möchte man aber nicht einen ganzen Abschnitt als Code darstellen, sondern nur ein paar Befehle 
+innerhalb des Textes \code{\textbackslash pythoninline} hilft dabei einen Befehl wie \pythoninline{command} 
+entsprechend darzustellen.
+
+Quellcode im Python-Skript:
+\begin{python}
+if inputcheck(uid, password) == True:
+	if syntaxchecken(uid) == True:
+		if userexsits(uid) == False:
+\end{python}
+
+

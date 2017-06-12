@@ -1,0 +1,120 @@
+\documentclass[listof=numbered,12pt,a4paper]{scrartcl}
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{capt-of}
+\usepackage[absolute]{textpos}
+\usepackage[automark]{scrpage2}
+\usepackage[procnames]{listings}
+\usepackage{color}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+% zwei Bilder nebeneinander darstellen
+\usepackage{subfigure}
+%\usepackage{titlesec}
+%smiley-Packet
+\usepackage{tikzsymbols}
+\setkomafont{sectioning}{\bfseries} 
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\geometry{a4paper,left=30mm,right=20mm}
+% beheben ds tightlist-Errors
+\def\tightlist{}
+
+
+
+% Nach \title{}
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+% Custom colors
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            %   
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+% \code{TEXT} um TEXT als monospace (courier new) dazustellen
+\newcommand{\code}[1]{\texttt{#1}}
+
+
+\newcommand{\twopicinsert}[7] {
+%\twopicinsert{weite1}{dateiname1 (ohne png)}{Abbildungbeschriftung1}{weite2}{dateiname2}{Abbildungbeschriftung2}{Gesamtbeschrift}}}
+  \begin{figure}[h]
+  \subfigure[#3]{\includegraphics[width=#1\textwidth]{./res/#2.png}}
+  \subfigure[#6]{\includegraphics[width=#4\textwidth]{./res/#5.png}} 
+  \caption{#7\label{fig:#3}} 
+  \end{figure}
+}
+
+
+\newcommand{\picinsert}[3] {
+% \picinsert{0.5}{dateiname (ohne png)}{Abbildungbeschriftung}
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=#1\textwidth]{./res/#2.png}
+% Bildtitel zur Referenzierung
+  \caption{#3\label{fig:#2}}
+  \end{figure}
+}
+
+
+\usepackage{graphicx}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\ScaleIfNeeded{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+\let\Oldincludegraphics\includegraphics
+{%
+ \catcode`\@=11\relax%
+ \gdef\includegraphics{\@ifnextchar[{\Oldincludegraphics}{\Oldincludegraphics[width=\ScaleIfNeeded]}}%
+}
+
+
+
+

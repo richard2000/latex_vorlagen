@@ -1,0 +1,79 @@
+Kurzanleitung:
+
+% ist das Kommentarzeichen in Latex. Alles was dahinter steht wird ignoriert. Man kann also seinen eigenen Text kommentieren 
+% ohne das diese Kommentar später im fertigen Dokument erscheinen
+
+Mit dem folgenden Befehl wird das eigentliche PDF-Dokument erzeugt.
+./make_pdf.sh
+
+Das Ergebnis wird inklusive aller erzeugten Dateien in den Ordner output abgelegt. 
+Man kann alles darin löschen (sofern man nicht selbst etwas hineingelegt hat ;-)
+Falls man mal alles gelöscht hat, dann müssen zwei Durchläufe gemacht werden, damit das Inhaltsverzeichnis und alle anderen Verzeichnisse erstellt werden können.
+Der erste Durchlauf legt die .toc Datei an, die im zweiten Durchlauf für die Erstellung der Verweise (u.a. der Verzeichnisse) genutzt wird.
+Verändert man große Teile in der Gliederung kann es ebenfalls notwendig sein, zwei Durchläufe zu starten, damit alles aktuell ist.
+
+Das Hauptdokument ist Dokumention_main.tex
+Hier werden alle anderen Dokumente mit dem Befehl \input{DATEINAME} eingebunden. Die Endung .tex kann dabei entfallen.
+Im folgenden einige besondere Dateien:
+
+preinput.tex 
+Sie enthält alle benötigten Pakete (\usepackage[PAKETNAME]) bzw. neudefiniert Befehle (\newcommand). Will man 
+eigene Befehle definieren, um sich die Arbeit zu vereinfachen, dann sollte man dies hier tun, damit man den Überblick nicht 
+verliert.
+
+Die anderen Dateien sind eigentlich durch den Dateinamen selbstklärend. Man kann die Arbeit auch in Unterordner verteilen.
+Z.B. alle Bilder in picture legen. Dies kann man dann nutzen, um per \newcommand einen Befehl zu kreieren, der 
+nur wenige Parameter benötigt. Im vorliegend Beispiel wurden die Ordner verwendet, um für jeden Teilnehmer einen eigenen Bereich
+zu schaffen. Der Fantasie sind (fast) keine Grenzen gesetzt.
+
+
+Infos für weitere Autoren:
+Inhaltsverzeichnis wird aus allen \section und \subsection automatisch erzeugt.
+
+Bitte folgende ``Befehle'' für das Schreiben benutzen.. Dann sieht es einheitlich aus...
+\section{TEXT} -> Neuer Abschnitt (z.B. 1. Projektziel)
+\subsection{TEXT} Neuer Unterpunkt (z.B. 1.1 Projektumgebung)
+\par\bigskip -> Absatz
+\newline -> Zeilenumbruch
+
+Stichpunkte:
+\begin{itemize} -> Start
+\item Ein Stichpunkt -> Stichpunkt
+\item Noch ein Stichpunkt -> Stichpunkt
+\end{itemize} -> Ende
+
+Unterstrich bitte mit \ maskieren -> also \-
+Überschriften und Unterüberschriften:
+\section{} -> 1 Ebene
+\subsection{} -> 2 Ebene
+\subsubsection{} -> 3 Ebene
+\paragraph{} -> 4 Ebene
+\subparagraph{} -> 5 Ebene
+BITTE HINTER \paragraph{} und \subparagraph{} IMMER folgendes setzen $\;$\\.. Sonst gibt es keinen
+Zeilenumbruch.. also sieht dann so aus \paragraph{}$\;$\\
+
+Bilder einfügen an Ort und Stelle per zwang!!!!!!! Gefunden auf ftp://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/info/l2picfaq/german/l2picfaq.pdf
+\begin{center}
+\begin{minipage}{0.7\linewidth}
+\centering
+\includegraphics{Bild}%
+\captionof{figure}[erscheint im Abbildungsverzeichnis]{direkte Bildunterschrift}%
+\end{minipage}
+\end{center}
+
+Zitate
+\begin{quote}
+ Eigentliches Zitat
+\end{quote}
+
+Fett schreiben
+\textbf{Fett geschriebens Element}\\
+
+% URL Einbinden immer so!!!!!!
+\url{http://www.bla_bla_bla}
+Latex hat Probleme mit der Darstellung von bestimmten Zeichen wie _ oder ähnlichem
+
+Section NICHT zählen section*{}
+
+
+
